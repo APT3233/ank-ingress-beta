@@ -15,7 +15,27 @@ Mỗi gói gồm thư mục `dist/`: JavaScript do TypeScript biên dịch (gi�
 
 Các gói **không** có trên npm registry, nên phải cài từ file trong repo này, và phải cài **trong cùng một lệnh** gói cần dùng cùng mọi gói nó phụ thuộc (xem bảng bên dưới).
 
-Cách khuyên dùng: chép file vào dự án rồi commit thư mục `vendor/`, để cả nhóm và CI cài được mà không cần truy cập repo này.
+### Cài thẳng từ GitHub
+
+Cách nhanh nhất. npm tải file `.tgz` từ repo này và giải nén vào `node_modules/@ank-ingress/*`; `package.json` của dự án lưu lại URL nên lần sau chỉ cần `npm install`.
+
+Chỉ cần HTTP (không Kafka, MinIO, Redis) thì cài 7 gói:
+
+```bash
+npm install https://raw.githubusercontent.com/APT3233/ank-ingress-beta/main/tarballs/ank-ingress-{app,kernel,config,contracts,observability,runtime,http}-1.0.0.tgz
+```
+
+Cài toàn bộ:
+
+```bash
+npm install https://raw.githubusercontent.com/APT3233/ank-ingress-beta/main/tarballs/ank-ingress-{kernel,config,contracts,observability,runtime,postgres,workers,http,security,cache,messaging,storage,realtime,app,testing}-1.0.0.tgz
+```
+
+Lệnh dùng `{a,b}` của bash/zsh để viết gọn; trên shell khác thì liệt kê từng URL.
+
+### Cài từ thư mục `vendor/`
+
+Dùng khi máy cài không truy cập được GitHub. Chép file vào dự án rồi commit thư mục `vendor/`.
 
 ```bash
 git clone https://github.com/APT3233/ank-ingress-beta.git /tmp/ank-ingress-dist
@@ -24,11 +44,8 @@ cp -r /tmp/ank-ingress-dist/tarballs/*.tgz vendor/ank-ingress/
 
 # Cài toàn bộ
 npm install ./vendor/ank-ingress/*.tgz
-```
 
-Chỉ cần HTTP (không Kafka, MinIO, Redis) thì cài 7 gói:
-
-```bash
+# Hoặc chỉ HTTP (7 gói)
 npm install ./vendor/ank-ingress/ank-ingress-app-1.0.0.tgz \
   ./vendor/ank-ingress/ank-ingress-kernel-1.0.0.tgz \
   ./vendor/ank-ingress/ank-ingress-config-1.0.0.tgz \
@@ -77,4 +94,4 @@ Các đường dẫn `packages/…`, `examples/…`, `tools/…` và lệnh `npm
 
 ## Cập nhật phiên bản
 
-Phiên bản nằm trong tên file. Khi có bản mới: xóa file cũ trong `vendor/ank-ingress/`, chép file mới vào, rồi chạy lại lệnh `npm install` với các file mới.
+Phiên bản nằm trong tên file. Khi có bản mới: chạy lại lệnh cài ở trên với số phiên bản mới (cài từ GitHub), hoặc thay file trong `vendor/ank-ingress/` rồi `npm install` lại (cài từ `vendor/`).
