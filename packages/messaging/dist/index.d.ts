@@ -1,0 +1,13 @@
+export type { KafkaProducerMessage, KafkaTopicMessages, KafkaDeliveryResult, KafkaProducerStats, KafkaProducer, KafkaConsumedMessage, KafkaEachMessagePayload, KafkaEachBatchPayload, KafkaTopicPartition, KafkaTopicPartitionOffset, KafkaConsumerRunOptions, KafkaConsumerOptions, KafkaConsumer, KafkaAdmin, KafkaConfig, KafkaBundle } from './types/kafka.types.js';
+export { createKafka, type Producer, type Consumer, type Admin } from './adapters/kafka/create-kafka.js';
+export type { EncodedKafkaMessage, EncodeOptions, RawKafkaHeaderInput, RawKafkaMessage, DecodedKafkaMessage, PartialEnvelopeMetadata, DecodeClassification } from './types/codec.types.js';
+export { formatOutboxBrokerKey, encodeEnvelope } from './core/codec/encode.js';
+export { normalizeKafkaHeaders } from './core/codec/headers.js';
+export { classifyAndDecodeMessage, decodeMessage } from './core/codec/decode.js';
+export type { OutboxPublisherOptions } from './types/outbox-publisher.types.js';
+export { createOutboxPublisher } from './core/outbox/outbox-publisher.js';
+export type { ConsumerRunnerOptions, ConsumerAuditEntry, ConsumerOperationsOptions, ConsumerOperations } from './types/consumer-runner.types.js';
+export { createConsumerRunner } from './core/consumer/consumer-runner.js';
+export { isPostgresTransientSqlState } from './core/consumer/execution-errors.js';
+export { createConsumerOperations } from './core/consumer/consumer-operations.js';
+export { replayDlq, type ReplayDlqOptions, type ReplayedDlqItem, type ReplayDlqResult } from './core/dlq/replay-dlq.js';

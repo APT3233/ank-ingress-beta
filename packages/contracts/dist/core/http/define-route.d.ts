@@ -1,0 +1,3 @@
+import type { TSchema } from '@sinclair/typebox';
+import type { Access, HttpMethod, RouteSpec } from '../../types/http/route.types.js';
+export declare function defineRoute<A extends Access, P extends TSchema | undefined = undefined, Q extends TSchema | undefined = undefined, B extends TSchema | undefined = undefined, Tx = unknown, AccessCtx = unknown, Path extends string = string, M extends HttpMethod = HttpMethod, TxMode extends 'none' | 'read' | 'write' | undefined = undefined>(spec: RouteSpec<A, P, Q, B, Tx, AccessCtx, Path, M, TxMode>): RouteSpec<A, P, Q, B, Tx, AccessCtx, Path, M, TxMode>;

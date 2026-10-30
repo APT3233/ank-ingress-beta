@@ -1,0 +1,14 @@
+export const DEFAULT_CONCURRENCY = 4;
+export const DEFAULT_BATCH_SIZE = 10;
+export const DEFAULT_POLL_INTERVAL_MS = 250;
+export const DEFAULT_LEASE_MS = 30_000;
+export const DEFAULT_JOB_TIMEOUT_MS = 300_000;
+export const DEFAULT_RETRY_BACKOFF_BASE_MS = 5_000;
+export const DEFAULT_REAP_INTERVAL_MS = 30_000;
+export const DEFAULT_REAP_BATCH_SIZE = 500;
+export const DEFAULT_PURGE_INTERVAL_MS = 60 * 60 * 1000; // 1 hour
+export const DEFAULT_PURGE_BATCH_SIZE = 10_000;
+export const DEFAULT_OUTBOX_RETENTION_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+export const DEFAULT_INBOX_RETENTION_MS = 14 * 24 * 60 * 60 * 1000; // 14 days
+export const DEFAULT_REPLAY_WINDOW_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+export const DEFAULT_MAX_PURGE_BATCHES_PER_TICK = 50;

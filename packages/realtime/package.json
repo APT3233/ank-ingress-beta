@@ -1,0 +1,26 @@
+{
+  "name": "@ank-ingress/realtime",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@ank-ingress/kernel": "1.0.0",
+    "@ank-ingress/contracts": "1.0.0",
+    "@ank-ingress/observability": "1.0.0",
+    "@ank-ingress/http": "1.0.0",
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#b1092c70692ddbcc87464a77da44848614f6342a"
+  },
+  "engines": {
+    "node": "^24.22.1"
+  }
+}

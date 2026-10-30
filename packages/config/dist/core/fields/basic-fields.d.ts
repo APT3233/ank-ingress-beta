@@ -1,0 +1,12 @@
+import type { Field } from '../../types/config.types.js';
+type Parser<T> = (raw: string) => T;
+export declare function required<T>(env: string, parse: Parser<T>): Field<T>;
+export declare function optional<T>(env: string, parse: Parser<T>, fallback: T): Field<T>;
+export declare const text: Parser<string>;
+export declare function integer(min: number, max: number): Parser<number>;
+export declare const port: Parser<number>;
+export declare const boolean: Parser<boolean>;
+export declare function oneOf<const V extends string>(values: readonly V[]): Parser<V>;
+export declare const absolutePath: Parser<string>;
+export declare function list<T>(item: Parser<T>): Parser<readonly T[]>;
+export {};

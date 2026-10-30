@@ -1,0 +1,27 @@
+{
+  "name": "@ank-ingress/messaging",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@ank-ingress/kernel": "1.0.0",
+    "@ank-ingress/contracts": "1.0.0",
+    "@ank-ingress/observability": "1.0.0",
+    "@ank-ingress/runtime": "1.0.0",
+    "@sinclair/typebox": "0.34.52",
+    "@confluentinc/kafka-javascript": "1.11.0"
+  },
+  "engines": {
+    "node": "^24.22.1"
+  }
+}

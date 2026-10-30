@@ -1,0 +1,14 @@
+export declare const DEFAULT_CONCURRENCY = 4;
+export declare const DEFAULT_BATCH_SIZE = 10;
+export declare const DEFAULT_POLL_INTERVAL_MS = 250;
+export declare const DEFAULT_LEASE_MS = 30000;
+export declare const DEFAULT_JOB_TIMEOUT_MS = 300000;
+export declare const DEFAULT_RETRY_BACKOFF_BASE_MS = 5000;
+export declare const DEFAULT_REAP_INTERVAL_MS = 30000;
+export declare const DEFAULT_REAP_BATCH_SIZE = 500;
+export declare const DEFAULT_PURGE_INTERVAL_MS: number;
+export declare const DEFAULT_PURGE_BATCH_SIZE = 10000;
+export declare const DEFAULT_OUTBOX_RETENTION_MS: number;
+export declare const DEFAULT_INBOX_RETENTION_MS: number;
+export declare const DEFAULT_REPLAY_WINDOW_MS: number;
+export declare const DEFAULT_MAX_PURGE_BATCHES_PER_TICK = 50;

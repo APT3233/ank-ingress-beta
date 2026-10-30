@@ -1,0 +1,26 @@
+{
+  "name": "@ank-ingress/app",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@ank-ingress/contracts": "1.0.0",
+    "@ank-ingress/http": "1.0.0",
+    "@ank-ingress/kernel": "1.0.0",
+    "@ank-ingress/observability": "1.0.0",
+    "@sinclair/typebox": "0.34.52"
+  },
+  "engines": {
+    "node": "^24.22.1"
+  }
+}

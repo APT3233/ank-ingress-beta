@@ -1,0 +1,22 @@
+{
+  "name": "@ank-ingress/observability",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "pino": "10.4.0"
+  },
+  "engines": {
+    "node": "^24.22.1"
+  }
+}
